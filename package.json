@@ -6,11 +6,8 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run --browser chrome --headless",
-    "cy:filter": "CYPRESS_GREP_PRE_FILTER=true npm run cy:run",
-    "cy:grep": "export CYPRESS_GREP_RESULTS_FILE='./filtered_tests.json' && npm run cy:filter && npm run cy:run -- --config specPattern='*.*no'",
-    "cy:run:filtered": "CYPRESS_GREP_RESULTS_FILE='./filtered_tests.json' npm run cy:run -- --config specPattern='*.*no'",
-    "cy:p1": "CYPRESS_GREP='@P1' npm run cy:grep",
-    "cy:p1:filtered": "CYPRESS_GREP='@P1' npm run cy:run:filtered"
+    "cy:grep": "cy-grep --script 'npm run cy:run'",
+    "cy:p1": "npm run cy:grep -- --grep='@P1'"
   },
   "repository": {
     "type": "git",
@@ -23,7 +20,7 @@
   },
   "homepage": "https://github.com/mmisty/cypress-grep-example#readme",
   "dependencies": {
-    "@mmisty/cypress-grep": "^1.4.6",
+    "@mmisty/cypress-grep": "^1.6.2",
     "cypress": "^12.17.4"
   }
 }

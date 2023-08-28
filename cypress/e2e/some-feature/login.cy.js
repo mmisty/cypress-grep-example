@@ -1,5 +1,5 @@
 describe('login', { tags: '@smoke' }, () => {
-  it('01. should login @P1', () => {
+  it('01. should login', () => {
     //... test code
   })
   
