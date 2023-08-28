@@ -1,6 +1,5 @@
 const { defineConfig } = require("cypress");
 const { pluginGrep } = require("@mmisty/cypress-grep/plugins");
-process.env['CYPRESS_SPEC_PATTERN'] = '*.*';
 
 module.exports = defineConfig({
   e2e: {
